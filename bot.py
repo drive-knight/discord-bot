@@ -8,15 +8,16 @@ settings = {
     'prefix': '!',
 }
 
-bot = commands.Bot(command_prefix = settings['prefix'])
+bot = commands.Bot(command_prefix=settings['prefix'])
+
 
 @bot.command(pass_context=True)
 async def info(ctx, member: discord.Member = None):
     if not member:
         member = ctx.message.author
     roles = [role for role in member.roles]
-    emb = discord.Embed(colour=discord.Colour.purple(), timestamp=ctx.message.created_at,
-                          title=f"User Info - {member}")
+    emb = discord.Embed(colour=discord.Colour.blue(), timestamp=ctx.message.created_at,
+                        title=f"User Info - {member}")
     emb.set_thumbnail(url=member.avatar_url)
     emb.set_footer(text=f"Requested by {ctx.author}")
 
@@ -29,7 +30,8 @@ async def info(ctx, member: discord.Member = None):
 
     emb.add_field(name="Roles:", value="".join([role.mention for role in roles[1:]]))
     await ctx.send(embed=emb)
-    
+
+
 token = os.environ.get('BOT_TOKEN')
 
 bot.run(str(token))
