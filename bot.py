@@ -11,11 +11,11 @@ settings = {
 
 bot = commands.Bot(command_prefix=settings['prefix'])
 
-gifs = ('https://i.imgur.com/8JGpqi8.gif', 'https://i.imgur.com/EZrsYyu.gif', 'https://i.imgur.com/7zEEI0C.gif',
-        'https://i.imgur.com/0SpBiAn.gif', 'https://i.imgur.com/5mAm5yA.gif', 'https://i.imgur.com/xmdhGdV.gif',
-        'https://i.imgur.com/RV5YOMy.gif', 'https://i.imgur.com/BGcWxa0.gif', 'https://i.imgur.com/I8iN2iv.gif',
-        'https://i.imgur.com/40lsJPi.gif', 'https://i.imgur.com/FC73FLS.gif', 'https://i.imgur.com/RvdRd4O.gif'
-        'https://i.imgur.com/wQVdG5P.gif', 'https://i.imgur.com/p2lnrna.gif', 'https://i.imgur.com/wQVdG5P.gif')
+gifs = {'sbor': 'https://i.imgur.com/8JGpqi8.gif', 'legenda': 'https://i.imgur.com/EZrsYyu.gif',
+        'nas': 'https://i.imgur.com/0SpBiAn.gif', 'ladno': 'https://i.imgur.com/5mAm5yA.gif',
+        'josko': 'https://i.imgur.com/RV5YOMy.gif', 'zavtra': 'https://i.imgur.com/I8iN2iv.gif',
+        'chel': 'https://i.imgur.com/40lsJPi.gif', 'idem': 'https://i.imgur.com/FC73FLS.gif',
+        'che': 'https://i.imgur.com/RvdRd4O.gif', 'krinj': 'https://i.imgur.com/wQVdG5P.gif'}
 
 
 @bot.command(pass_context=True)
@@ -40,10 +40,74 @@ async def info(ctx, member: discord.Member = None):
 
 
 @bot.command()
-async def ts(ctx):
+async def sbor(ctx):
     embed = discord.Embed()
-    embed.set_image(url=random.choice(gifs))
+    embed.set_image(url=gifs['sbor'])
     await ctx.send(embed=embed)
+
+
+@bot.command()
+async def legenda(ctx):
+    embed = discord.Embed()
+    embed.set_image(url=gifs['legenda'])
+    await ctx.send(embed=embed)
+
+
+@bot.command()
+async def nas(ctx):
+    embed = discord.Embed()
+    embed.set_image(url=gifs['nas'])
+    await ctx.send(embed=embed)
+
+
+@bot.command()
+async def ladno(ctx):
+    embed = discord.Embed()
+    embed.set_image(url=gifs['ladno'])
+    await ctx.send(embed=embed)
+
+
+@bot.command()
+async def josko(ctx):
+    embed = discord.Embed()
+    embed.set_image(url=gifs['josko'])
+    await ctx.send(embed=embed)
+
+
+@bot.command()
+async def zavtra(ctx):
+    embed = discord.Embed()
+    embed.set_image(url=gifs['zavtra'])
+    await ctx.send(embed=embed)
+
+
+@bot.command()
+async def chel(ctx):
+    embed = discord.Embed()
+    embed.set_image(url=gifs['chel'])
+    await ctx.send(embed=embed)
+
+
+@bot.command()
+async def idem(ctx):
+    embed = discord.Embed()
+    embed.set_image(url=gifs['idem'])
+    await ctx.send(embed=embed)
+
+
+@bot.command()
+async def che(ctx):
+    embed = discord.Embed()
+    embed.set_image(url=gifs['che'])
+    await ctx.send(embed=embed)
+
+
+@bot.command()
+async def krinj(ctx):
+    embed = discord.Embed()
+    embed.set_image(url=gifs['krinj'])
+    await ctx.send(embed=embed)
+
 
 token = os.environ.get('BOT_TOKEN')
 
